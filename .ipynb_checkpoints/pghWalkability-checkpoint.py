@@ -27,32 +27,28 @@ tractNumpy= df2[["tractce10","hood"]].to_numpy()
 
 walkScoreTractSlice = walkScoreNumpy[0:16:1, 0]
 
-print("""walkScoreNumpy[0:16:1, 0] slices the walkScoreNumpy array into 
-a one dimensional array with indexes 0-16 in Census Tract""")
+print("""walkScoreNumpy[0:16:1, 0] slices the walkScoreNumpy array into a one dimensional array with indexes 0-16 in Census Tract""")
 print("\n")
 print(walkScoreTractSlice)
 print("\n")
 
 walkScoreTractSlice = np.delete(walkScoreTractSlice, 15)
 
-print("""np.delete(walkScoreTractSlice, 15) deletes index 15 in walkScoreTractSlice
-because the tract number was not a City of Pittsburgh""")
+print("""np.delete(walkScoreTractSlice, 15) deletes deletes index 15 in walkScoreTractSlice because the tract number was not a City of Pittsburgh""")
 print("\n")
 print(walkScoreTractSlice)
 print("\n")
 
 walkScoreSlice = walkScoreNumpy[0:16:1, 1]
 
-print("""walkScoreNumpy[0:16:1, 1] slices the walkScoreNumpy array into 
-a one dimensional array with indexes 0-16 in Walk Score""")
+print("""walkScoreNumpy[0:16:1, 1] slices the walkScoreNumpy array into a one dimensional array with indexes 0-16 in Walk Score""")
 print("\n")
 print(walkScoreSlice)
 print("\n")
 
 walkScoreSlice = np.delete(walkScoreSlice, 15)
 
-print("""np.delete(walkScoreSlice, 15) deletes index 15 in walkScoreSlice 
-because the associated tract number was not a City of Pittsburgh""")
+print("""np.delete(walkScoreSlice, 15) deletes index 15 in walkScoreSlice because the associated tract number was not a City of Pittsburgh""")
 print("\n")
 print(walkScoreSlice)
 print("\n")
@@ -81,16 +77,14 @@ for value in walkScoreTractSlice:
 
 neighborhoods = np.take(hoodSlice, matchingList)
 
-print("""np.take(hoodSlice, matchingList) creates a new numpy array 
-that only includes the indices that are found in matchingList""")
+print("""np.take(hoodSlice, matchingList) creates a new numpy array that only includes the indices that are found in matchingList""")
 print("\n")
 print(neighborhoods)
 print("\n")
 
 combinedArr = np.column_stack((walkScoreTractSlice, neighborhoods, walkScoreSlice))
 
-print("""np.column_stack((walkScoreTractSlice, neighborhoods, walkScoreSlice))
-combines the three, 1D arrays into a 2D array""")
+print("""np.column_stack((walkScoreTractSlice, neighborhoods, walkScoreSlice)) combines the three, 1D arrays into a 2D array""")
 print("\n")
 print(combinedArr)
 print("\n")
@@ -210,8 +204,7 @@ averageScoresDF = pd.DataFrame(averageList, index =["Bloomfield", "Business Dist
 
 averageSorted = averageScoresDF.sort_values(by=["Average Scores"], ascending=False)
 
-print("""averageScoresDF.sort_values(by=[\"Average Scores\"], ascending=False)
-sorts the DataFrame from highest to lowest score""")
+print("""averageScoresDF.sort_values(by=[\"Average Scores\"], ascending=False) sorts the DataFrame from highest to lowest score""")
 print("\n")
 print(averageSorted)
 print("\n")
